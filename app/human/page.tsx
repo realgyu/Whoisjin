@@ -2,269 +2,217 @@
 
 export default function HumanPage() {
   const facts = [
-    "ENFJ · 사람 만나는 거 좋아함",
-    "재즈 / 인디 음악 플레이리스트 수집가",
-    "고수, 민트초코 호(好)",
-    "새로운 툴/자동화/AI 만지작거리는 걸 즐김",
-    "'더 효율적으로 할 방법 없나?'가 기본 사고방식",
+    "ENFJ · 사람 만나면 에너지 충전",
+    "재즈·인디 음악 좋아함 (플레이리스트 수집)",
+    "고수·민트초코 호(好)",
+    "삼성라이온즈 팬",
+    "자동화/툴 좋아함 (\"더 효율적으로\"가 기본값)",
+    "요즘은 요리 자주 해먹음",
+    "국내여행 좋아함 (친구 동네 탐험 포함)",
   ];
 
   const hobbies = [
-    { emoji: "⚾", label: "야구 직관", color: "from-red-500 to-orange-500" },
-    { emoji: "🎧", label: "재즈·인디 음악", color: "from-purple-500 to-pink-500" },
-    { emoji: "✈️", label: "여행 & 산책", color: "from-blue-500 to-cyan-500" },
-    { emoji: "📊", label: "데이터 덕질", color: "from-green-500 to-emerald-500" },
-    { emoji: "🤖", label: "자동화 만들기", color: "from-yellow-500 to-orange-500" },
+    {
+      label: "야구 직관",
+      detail: "응원하는 팀(삼성라이온즈) 경기 보러 갑니다",
+      icon: "⚾",
+    },
+    {
+      label: "재즈·인디 음악",
+      detail: "플레이리스트를 만들고 모읍니다",
+      icon: "🎧",
+    },
+    {
+      label: "여행 & 산책",
+      detail: "국내 여행과 산책으로 새로운 동네를 탐험합니다",
+      icon: "✈️",
+    },
+    {
+      label: "데이터 덕질",
+      detail: "패턴을 관찰하고 기록하는 걸 좋아합니다",
+      icon: "📊",
+    },
+    {
+      label: "자동화 만들기",
+      detail: "반복 작업을 줄이는 작은 도구를 만듭니다",
+      icon: "🔧",
+    },
   ];
 
   const principles = [
     {
       title: "사람 먼저",
-      desc: "결국 서비스는 사람이 쓰는 것. 고객/동료/파트너 입장에서 먼저 생각합니다.",
-      emoji: "👥",
-      color: "blue",
+      desc: "고객·동료·파트너 관점에서 문제를 먼저 정의합니다.",
+      highlight: "사람",
     },
     {
-      title: "빠른 실행 → 빠른 학습",
-      desc: "완벽한 계획보다 빠른 실험과 검증을 선호합니다.",
-      emoji: "⚡",
-      color: "purple",
+      title: "빠른 실행",
+      desc: "작게 실험하고 빠르게 검증하는 방식을 선호합니다.",
+      highlight: "실행",
     },
     {
-      title: "작은 자동화의 힘",
-      desc: "반복 업무는 반드시 줄이고, 시간을 '생각'에 쓰고 싶습니다.",
-      emoji: "🔧",
-      color: "green",
+      title: "자동화의 힘",
+      desc: "반복 업무를 줄여 중요한 의사결정에 시간을 씁니다.",
+      highlight: "자동화",
     },
   ];
 
-  const bgColors: Record<string, string> = {
-    blue: "bg-blue-50 border-blue-200",
-    purple: "bg-purple-50 border-purple-200",
-    green: "bg-green-50 border-green-200",
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      {/* Animated Background Pattern */}
-      <div className="fixed inset-0 opacity-[0.02] pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(0 0 0) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }}></div>
-      </div>
-
-      <div className="relative max-w-content mx-auto px-6 py-20 space-y-20">
-        {/* Hero */}
-        <section className="space-y-6 animate-fade-in">
-          <div className="inline-block px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-sm font-semibold rounded-full mb-4">
-            Human, not just PM
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="max-w-6xl mx-auto px-8 py-20">
+        <div className="relative">
+          {/* Small intro card */}
+          <div className="absolute -top-4 right-0 w-80 bg-white border-2 border-gray-900 p-6 z-10">
+            <p className="text-sm text-gray-700 leading-relaxed">
+              프로덕트 매니저 · 데이터 기반 실행 · 자동화로 운영을 가볍게 만듭니다.
+              <br />
+              일 밖에서는 야구 보고, 음악 듣고, 동네를 걷는 사람입니다.
+            </p>
           </div>
 
-          <h1 className="text-6xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent tracking-tight">
-            인간 황진규 👋
-          </h1>
+          {/* Main Typography */}
+          <div className="pt-16">
+            <h1 className="text-8xl font-black text-gray-900 leading-tight mb-2">
+              황진규의
+            </h1>
+            <h1 className="text-8xl font-black text-gray-900 leading-tight">
+              <div className="relative inline-block mr-4">
+                <span className="relative z-10 text-white px-6 py-2">
+                  인간적인
+                </span>
+                <div className="absolute inset-0 bg-purple-600 transform -skew-x-6"></div>
+              </div>
+              면을
+            </h1>
+            <h1 className="text-8xl font-black text-gray-900 leading-tight">
+              소개합니다
+              <span className="inline-block w-8 h-8 bg-cyan-400 rounded-full ml-4 mb-2"></span>
+            </h1>
+          </div>
 
-          <p className="text-2xl text-gray-700 leading-relaxed max-w-2xl">
-            일할 때는 꽤 진지하지만,
+          {/* Subtitle */}
+          <p className="text-2xl text-gray-600 font-medium mt-8 max-w-2xl">
+            일할 때는 진지하게,
             <br />
-            일 밖에서는 그냥 <span className="font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">호기심 많은 사람</span>입니다.
+            일 밖에서는 가볍게.
           </p>
 
-          <div className="flex gap-3 pt-4">
+          {/* CTA Buttons */}
+          <div className="flex gap-4 mt-12">
             <a
               href="/work"
-              className="group px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-xl font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="px-8 py-4 bg-gray-900 text-white text-lg font-bold hover:bg-gray-800 transition-colors"
             >
-              <span className="flex items-center gap-2">
-                Work 페이지로
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </span>
+              Work 보기 →
             </a>
             <a
               href="mailto:contact@example.com"
-              className="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-xl font-semibold hover:bg-gray-900 hover:text-white transition-all duration-300"
+              className="px-8 py-4 border-2 border-gray-900 text-gray-900 text-lg font-bold hover:bg-gray-50 transition-colors"
             >
               연락하기
             </a>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Section Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+      {/* Intro Statement */}
+      <section className="max-w-6xl mx-auto px-8 py-16">
+        <div className="border-2 border-gray-900 p-12">
+          <p className="text-4xl font-black text-gray-900 leading-relaxed">
+            새로운 걸 배우는 걸 좋아하고,
+          </p>
+          <p className="text-4xl font-black text-gray-900 leading-relaxed mt-4">
+            반복되는 일은 자동화로 줄이고,
+          </p>
+          <p className="text-4xl font-black text-gray-900 leading-relaxed mt-4">
+            사람들과 함께 성장하는 순간에서
+          </p>
+          <p className="text-4xl font-black text-gray-900 leading-relaxed mt-4">
+            가장 큰 동기부여를 얻습니다
+            <span className="inline-block w-6 h-6 bg-cyan-400 rounded-full ml-3 mb-1"></span>
+          </p>
+        </div>
+      </section>
 
-        {/* 한줄 소개 카드 */}
-        <section>
-          <div className="relative bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 border-2 border-gray-200 rounded-3xl p-12 overflow-hidden group">
-            {/* Decorative circle */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-            
-            <div className="relative">
-              <div className="text-5xl mb-6">💡</div>
-              <p className="text-2xl text-gray-800 leading-relaxed font-medium">
-                새로운 걸 배우는 걸 좋아하고,
-                <br />
-                귀찮은 건 자동화하고,
-                <br />
-                사람들과 같이 성장하는 순간에서 가장 큰 동기부여를 받습니다.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Section Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-
-        {/* Quick facts */}
-        <section>
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-3xl">✨</span>
-            <h2 className="text-2xl font-bold text-gray-900">
-              Quick facts
-            </h2>
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            {facts.map((fact, idx) => (
-              <span
-                key={fact}
-                className="px-5 py-3 bg-white border-2 border-gray-200 text-gray-800 rounded-full text-sm font-semibold hover:border-blue-500 hover:shadow-lg transition-all duration-300"
-                style={{ animationDelay: `${idx * 50}ms` }}
-              >
+      {/* Quick Facts */}
+      <section className="max-w-6xl mx-auto px-8 py-16">
+        <h2 className="text-5xl font-black text-gray-900 mb-8">
+          빠르게 알아보는 나
+        </h2>
+        <div className="grid grid-cols-3 gap-6">
+          {facts.map((fact, idx) => (
+            <div
+              key={idx}
+              className="border-2 border-gray-900 p-6 hover:bg-gray-50 transition-colors"
+            >
+              <span className="text-base font-medium text-gray-900">
                 {fact}
               </span>
-            ))}
-          </div>
-        </section>
-
-        {/* Section Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-
-        {/* Hobbies */}
-        <section>
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-3xl">🎨</span>
-            <h2 className="text-2xl font-bold text-gray-900">
-              좋아하는 것들
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {hobbies.map((hobby, idx) => (
-              <div
-                key={hobby.label}
-                className="group relative bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-transparent hover:shadow-2xl transition-all duration-300 overflow-hidden"
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                {/* Gradient Background on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${hobby.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                
-                <div className="relative">
-                  <div className="text-5xl mb-3 group-hover:scale-125 transition-transform duration-300">
-                    {hobby.emoji}
-                  </div>
-                  <div className="text-sm font-semibold text-gray-800">
-                    {hobby.label}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Section Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-
-        {/* 가치관 */}
-        <section>
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-3xl">💪</span>
-            <h2 className="text-2xl font-bold text-gray-900">
-              제가 일하는 방식
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {principles.map((p, idx) => (
-              <div
-                key={p.title}
-                className={`group ${bgColors[p.color]} border-2 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300`}
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
-                  {p.emoji}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {p.title}
-                </h3>
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  {p.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Section Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-
-        {/* CTA - Work 페이지로 */}
-        <section>
-          <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl p-12 text-center overflow-hidden">
-            {/* Animated Background */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-                backgroundSize: '32px 32px'
-              }}></div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            <div className="relative">
-              <div className="text-5xl mb-6">💼</div>
-              <h2 className="text-4xl font-bold text-white mb-4">
-                일하는 황진규가 궁금하신가요?
-              </h2>
-              <p className="text-xl text-gray-300 mb-10">
-                데이터로 운영을 만들고, 프로세스를 개선하는 이야기를 확인해보세요.
+      {/* Hobbies */}
+      <section className="max-w-6xl mx-auto px-8 py-16">
+        <h2 className="text-6xl font-black text-gray-900 mb-12">
+          좋아하는 것들
+        </h2>
+        <div className="grid grid-cols-2 gap-8">
+          {hobbies.map((hobby, idx) => (
+            <div
+              key={idx}
+              className="border-2 border-gray-900 p-10 hover:bg-gray-50 transition-colors"
+            >
+              <div className="text-7xl mb-6">{hobby.icon}</div>
+              <h3 className="text-3xl font-black text-gray-900 mb-4">
+                {hobby.label}
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {hobby.detail}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/work"
-                  className="group inline-block px-10 py-5 bg-white text-gray-900 rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300"
-                >
-                  <span className="flex items-center justify-center gap-2">
-                    Work 페이지 보기
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </span>
-                </a>
-                <a
-                  href="mailto:contact@example.com"
-                  className="inline-block px-10 py-5 border-2 border-white text-white rounded-xl font-bold hover:bg-white hover:text-gray-900 transition-all duration-300"
-                >
-                  이메일로 연락하기
-                </a>
-              </div>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* Footer Links */}
-        <section>
-          <div className="text-center text-gray-500 text-sm space-y-2">
-            <p>
-              더 자세한 이력이나 프로젝트가 궁금하시다면
-            </p>
-            <div className="flex justify-center gap-6">
-              <a href="/work" className="text-blue-600 hover:underline font-medium">
-                Work 페이지 →
-              </a>
-              <a href="mailto:contact@example.com" className="text-blue-600 hover:underline font-medium">
-                이메일 보내기 →
-              </a>
+      {/* Principles */}
+      <section className="max-w-6xl mx-auto px-8 py-16 mb-20">
+        <h2 className="text-6xl font-black text-gray-900 mb-12">
+          일하는 방식
+        </h2>
+        <div className="grid grid-cols-3 gap-8">
+          {principles.map((p, idx) => (
+            <div
+              key={idx}
+              className="border-2 border-gray-900 p-8 hover:bg-gray-50 transition-colors"
+            >
+              <h3 className="text-3xl font-black text-gray-900 mb-6">
+                {p.title}
+              </h3>
+              <p className="text-base text-gray-700 leading-relaxed">
+                {p.desc}
+              </p>
             </div>
-          </div>
-        </section>
-      </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-6xl mx-auto px-8 py-20">
+        <div className="bg-gray-900 p-20 text-center">
+          <h2 className="text-6xl font-black text-white mb-12">
+            일하는 황진규가 궁금하신가요?
+          </h2>
+          <a
+            href="/work"
+            className="px-12 py-5 bg-white text-gray-900 text-xl font-bold hover:bg-gray-100 transition-colors"
+          >
+            프로젝트 보기 →
+          </a>
+        </div>
+      </section>
     </div>
   );
 }
