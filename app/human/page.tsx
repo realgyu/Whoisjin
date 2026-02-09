@@ -11,7 +11,7 @@ export default function HumanPage() {
     "재즈·인디 디깅",
     "고수·민트초코 호",
     "자동화 기본값",
-    "더 효율적으로? 모드",
+    "더 효율적으로?",
   ];
 
   const hobbies = [
@@ -83,42 +83,78 @@ export default function HumanPage() {
   const visibleManualItems = showAllManual ? manualItems : manualItems.slice(0, 8);
 
   return (
-    <div className="min-h-screen bg-white">
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-20">
-        <h1 className="text-4xl md:text-7xl font-black text-gray-900 leading-[1.08] tracking-tight">
-          일할 땐 진지하고,
-        </h1>
-        <h1 className="mt-2 text-4xl md:text-7xl font-black text-gray-900 leading-[1.08] tracking-tight">
-          일 밖에선 호기심 많은 사람입니다.
-        </h1>
+    <main className="min-h-screen bg-[#f5f4ef] text-[#171717]">
+      <section className="relative overflow-hidden border-b-2 border-[#171717] bg-[radial-gradient(circle_at_top_left,_#f0e8d2_0%,_#f5f4ef_55%)]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-14 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.85fr] gap-8 md:gap-10">
+            <div>
+              <p className="text-xs md:text-sm font-bold tracking-[0.16em] uppercase text-[#4c4c4c]">
+                Human / Profile
+              </p>
+              <h1 className="mt-3 text-4xl md:text-7xl font-black leading-[1.04] tracking-tight">
+                일할 땐 진지하고,
+              </h1>
+              <h1 className="mt-2 text-4xl md:text-7xl font-black leading-[1.04] tracking-tight">
+                일 밖에선 호기심 많은 사람입니다.
+              </h1>
+              <p className="mt-6 text-base md:text-xl text-[#353535] font-medium max-w-3xl leading-relaxed">
+                야구 없으면 요리하고, 새 툴 보면 만져보고, 친구 동네 탐험을 좋아합니다.
+              </p>
 
-        <p className="mt-6 text-base md:text-xl text-gray-600 font-medium max-w-3xl leading-relaxed">
-          야구 없으면 요리하고, 새 툴 보면 만져보고, 친구 동네 탐험을 좋아합니다.
-        </p>
+              <div className="mt-8 flex flex-wrap gap-2.5">
+                {quickFacts.map((fact) => (
+                  <span
+                    key={fact}
+                    className="rounded-full border-2 border-[#171717] bg-white/80 px-4 py-2 text-sm font-bold"
+                  >
+                    {fact}
+                  </span>
+                ))}
+              </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 md:mt-10">
-          <a
-            href="/work"
-            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gray-900 text-white text-base sm:text-lg font-bold hover:bg-gray-800 transition-colors text-center"
-          >
-            Work 보기 →
-          </a>
-          <a
-            href="mailto:contact@example.com"
-            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-gray-900 text-gray-900 text-base sm:text-lg font-bold hover:bg-gray-50 transition-colors text-center"
-          >
-            연락하기
-          </a>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
+                <a
+                  href="/work"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#171717] text-white text-base sm:text-lg font-bold hover:bg-black transition-colors text-center"
+                >
+                  Work 보기 →
+                </a>
+                <a
+                  href="mailto:contact@example.com"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl border-2 border-[#171717] text-[#171717] text-base sm:text-lg font-bold hover:bg-white transition-colors text-center"
+                >
+                  연락하기
+                </a>
+              </div>
+            </div>
+
+            <aside className="rounded-2xl border-2 border-[#171717] bg-white p-6 md:p-7 shadow-[8px_8px_0px_#171717]">
+              <p className="text-xs font-bold tracking-[0.14em] uppercase text-[#5a5a5a]">Now Updating</p>
+              <p className="mt-4 text-2xl md:text-3xl font-black leading-tight">
+                완벽주의라 피곤해서,
+                <br />
+                요즘은 실행주의를 연습 중.
+              </p>
+              <p className="mt-4 text-sm md:text-base text-[#474747] leading-relaxed">
+                기획으로 시작해서 실행하고, 다시 디벨롭하는 흐름을 제일 좋아합니다.
+              </p>
+            </aside>
+          </div>
         </div>
       </section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16">
         <div className="flex items-end justify-between gap-3 mb-6 md:mb-8">
-          <h2 className="text-3xl md:text-5xl font-black text-gray-900">황진규 사용설명서</h2>
+          <div>
+            <p className="text-xs md:text-sm font-bold tracking-[0.14em] uppercase text-[#5a5a5a]">
+              User Manual
+            </p>
+            <h2 className="mt-1 text-3xl md:text-5xl font-black text-[#171717]">황진규 사용설명서</h2>
+          </div>
           <button
             type="button"
             onClick={() => setShowAllManual((prev) => !prev)}
-            className="px-4 py-2 border-2 border-gray-900 text-sm font-bold text-gray-900 hover:bg-gray-50 transition-colors"
+            className="rounded-lg border-2 border-[#171717] px-4 py-2 text-sm font-bold hover:bg-white transition-colors"
           >
             {showAllManual ? "접기" : "+ 더보기"}
           </button>
@@ -126,67 +162,29 @@ export default function HumanPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
           {visibleManualItems.map((item) => (
-            <div key={item} className="border-2 border-gray-900 p-4 sm:p-5">
-              <p className="text-sm sm:text-base font-medium text-gray-800 leading-relaxed">{item}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16">
-        <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-6 md:mb-8">Quick Facts</h2>
-        <div className="flex flex-wrap gap-3">
-          {quickFacts.map((fact) => (
-            <span
-              key={fact}
-              className="px-4 py-2 border-2 border-gray-900 text-sm sm:text-base font-bold text-gray-900"
-            >
-              {fact}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16">
-        <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-8 md:mb-10">좋아하는 장면들</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          {hobbies.map((hobby) => (
-            <article key={hobby.label} className="border-2 border-gray-900 p-6 sm:p-8">
-              <div className="text-4xl sm:text-5xl mb-4">{hobby.icon}</div>
-              <h3 className="text-2xl font-black text-gray-900 mb-2">{hobby.label}</h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{hobby.scene}</p>
+            <article key={item} className="rounded-xl border-2 border-[#171717] bg-white px-4 py-4 sm:px-5">
+              <p className="text-sm sm:text-base font-medium text-[#2f2f2f] leading-relaxed">{item}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16">
-        <div className="border-2 border-gray-900 p-6 sm:p-10 bg-gray-50">
-          <p className="text-sm font-black text-gray-900 mb-3">요즘의 나</p>
-          <p className="text-2xl md:text-4xl font-black text-gray-900 leading-tight">
-            완벽주의라 피곤해서, 요즘은 실행주의를 연습 중입니다.
-          </p>
-          <p className="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
-            기획으로 시작해서 실행하고, 다시 디벨롭하는 흐름을 제일 좋아합니다.
-          </p>
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16 pb-20">
+        <div className="mb-8 md:mb-10">
+          <p className="text-xs md:text-sm font-bold tracking-[0.14em] uppercase text-[#5a5a5a]">Scenes</p>
+          <h2 className="mt-1 text-3xl md:text-5xl font-black text-[#171717]">좋아하는 장면들</h2>
         </div>
-      </section>
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-20">
-        <div className="bg-gray-900 p-10 sm:p-14 md:p-20 text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-8">
-            일하는 모습이 궁금하면
-            <br />
-            Work 페이지에서 더 확인해 주세요.
-          </h2>
-          <a
-            href="/work"
-            className="inline-block px-8 sm:px-12 py-4 sm:py-5 bg-white text-gray-900 text-base sm:text-lg font-bold hover:bg-gray-100 transition-colors"
-          >
-            프로젝트 보기 →
-          </a>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+          {hobbies.map((hobby) => (
+            <article key={hobby.label} className="rounded-2xl border-2 border-[#171717] bg-white p-5 sm:p-6">
+              <div className="text-4xl sm:text-5xl mb-3">{hobby.icon}</div>
+              <h3 className="text-2xl font-black text-[#171717] mb-2">{hobby.label}</h3>
+              <p className="text-sm sm:text-base text-[#474747] leading-relaxed">{hobby.scene}</p>
+            </article>
+          ))}
         </div>
       </section>
-    </div>
+    </main>
   );
 }

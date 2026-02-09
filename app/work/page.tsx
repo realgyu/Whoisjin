@@ -6,9 +6,9 @@ export default function WorkPage() {
   const [showAllPrinciples, setShowAllPrinciples] = useState(false);
 
   const heroBullets = [
-    "병목을 정의하고",
-    "기준을 만들고",
-    "자동화로 확장합니다",
+    "병목을 정의하고 (Problem)",
+    "기준을 만들고 (Process)",
+    "자동화로 확장합니다 (System)",
   ];
 
   const impacts = [
@@ -34,14 +34,14 @@ export default function WorkPage() {
       label: "CRM 발송",
       value: "655만+",
       desc: "캠페인 운영",
-      context: "세그먼트 실험 및 운영 포함",
+      context: "캠페인 운영 및 세그먼트 실험 포함",
     },
   ];
 
   const workPrinciples = [
     {
       title: "문제를 숫자로 시작합니다",
-      detail: "감으로 정하지 않고 데이터로 병목을 먼저 보이게 만듭니다.",
+      detail: "감이 아니라 데이터로 병목을 먼저 보이게 만듭니다.",
       keywords: ["데이터", "병목"],
     },
     {
@@ -81,7 +81,7 @@ export default function WorkPage() {
     },
     {
       title: "지표는 행동으로 끝나야 합니다",
-      detail: "리포트로 끝내지 않고 운영 액션과 책임자까지 연결합니다.",
+      detail: "리포트에서 멈추지 않고 운영 액션과 책임자까지 연결합니다.",
       keywords: ["지표", "액션"],
     },
     {
@@ -155,158 +155,180 @@ export default function WorkPage() {
     : workPrinciples.slice(0, 6);
 
   return (
-    <div className="min-h-screen bg-white">
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-20">
-        <h1 className="text-4xl md:text-7xl font-black text-gray-900 leading-[1.05] tracking-tight">
-          데이터를 기반으로
-        </h1>
-        <h1 className="mt-2 text-4xl md:text-7xl font-black text-gray-900 leading-[1.05] tracking-tight">
-          복잡한 운영을 효율화 합니다.
-        </h1>
+    <main className="min-h-screen bg-[#f5f4ef] text-[#171717]">
+      <section className="relative overflow-hidden border-b-2 border-[#171717] bg-[radial-gradient(circle_at_top_right,_#e2e8d8_0%,_#f5f4ef_52%)]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-14 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_0.8fr] gap-8 md:gap-10 items-start">
+            <div>
+              <p className="text-xs md:text-sm font-bold tracking-[0.16em] uppercase text-[#4c4c4c]">
+                Work / Portfolio
+              </p>
+              <h1 className="mt-3 text-4xl md:text-7xl font-black leading-[1.02] tracking-tight">
+                데이터를 기반으로
+              </h1>
+              <h1 className="mt-2 text-4xl md:text-7xl font-black leading-[1.02] tracking-tight">
+                복잡한 운영을 효율화 합니다.
+              </h1>
+              <p className="mt-6 text-base md:text-xl text-[#353535] font-medium max-w-3xl leading-relaxed">
+                O2O 생활서비스 성수기 운영을 지표·프로세스·자동화로 안정화합니다.
+              </p>
 
-        <p className="mt-6 text-base md:text-xl text-gray-600 font-medium max-w-3xl leading-relaxed">
-          O2O 생활서비스 성수기 운영을 지표·프로세스·자동화로 안정화합니다.
-        </p>
+              <ul className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                {heroBullets.map((bullet) => (
+                  <li
+                    key={bullet}
+                    className="rounded-xl border-2 border-[#171717] bg-white/80 px-4 py-3 text-sm font-bold"
+                  >
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
 
-        <ul className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {heroBullets.map((bullet) => (
-            <li
-              key={bullet}
-              className="border-2 border-gray-900 px-4 py-3 text-sm md:text-base font-bold text-gray-900"
-            >
-              {bullet}
-            </li>
-          ))}
-        </ul>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
+                <a
+                  href="mailto:contact@example.com"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#171717] text-white text-base sm:text-lg font-bold hover:bg-black transition-colors text-center"
+                >
+                  연락하기
+                </a>
+                <a
+                  href="/human"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl border-2 border-[#171717] text-[#171717] text-base sm:text-lg font-bold hover:bg-white transition-colors text-center"
+                >
+                  Human 보기 →
+                </a>
+              </div>
+            </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
-          <a
-            href="mailto:contact@example.com"
-            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gray-900 text-white text-base sm:text-lg font-bold hover:bg-gray-800 transition-colors text-center"
-          >
-            연락하기
-          </a>
-          <a
-            href="/human"
-            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-gray-900 text-gray-900 text-base sm:text-lg font-bold hover:bg-gray-50 transition-colors text-center"
-          >
-            Human 보기 →
-          </a>
+            <aside className="rounded-2xl border-2 border-[#171717] bg-white p-6 md:p-7 shadow-[8px_8px_0px_#171717]">
+              <p className="text-xs font-bold tracking-[0.14em] uppercase text-[#5a5a5a]">Core Lens</p>
+              <ul className="mt-4 space-y-3">
+                <li className="text-sm md:text-base font-medium">운영을 시스템으로 만듭니다.</li>
+                <li className="text-sm md:text-base font-medium">병목을 숫자로 먼저 정의합니다.</li>
+                <li className="text-sm md:text-base font-medium">표준화와 자동화로 재현성을 만듭니다.</li>
+              </ul>
+              <div className="mt-6 grid grid-cols-2 gap-2">
+                <span className="rounded-lg bg-[#f0eddf] px-3 py-2 text-xs font-bold text-center">PM</span>
+                <span className="rounded-lg bg-[#f0eddf] px-3 py-2 text-xs font-bold text-center">Ops</span>
+                <span className="rounded-lg bg-[#f0eddf] px-3 py-2 text-xs font-bold text-center">CS</span>
+                <span className="rounded-lg bg-[#f0eddf] px-3 py-2 text-xs font-bold text-center">Automation</span>
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
           {impacts.map((impact) => (
-            <div key={impact.label} className="border-2 border-gray-900 p-4 sm:p-6">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-2">
-                {impact.value}
-              </div>
-              <div className="text-xs sm:text-sm font-bold text-gray-900 mb-1">
-                {impact.label}
-              </div>
-              <div className="text-[11px] sm:text-xs text-gray-600">{impact.desc}</div>
-              <div className="mt-2 text-[11px] sm:text-xs text-gray-500">{impact.context}</div>
-            </div>
+            <article
+              key={impact.label}
+              className="rounded-2xl border-2 border-[#171717] bg-white p-4 sm:p-5"
+            >
+              <p className="text-2xl sm:text-3xl md:text-4xl font-black text-[#171717]">{impact.value}</p>
+              <p className="mt-2 text-xs sm:text-sm font-bold text-[#171717]">{impact.label}</p>
+              <p className="mt-1 text-[11px] sm:text-xs text-[#5b5b5b]">{impact.desc}</p>
+              <p className="mt-2 text-[11px] sm:text-xs text-[#7a7a7a]">{impact.context}</p>
+            </article>
           ))}
         </div>
       </section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16">
         <div className="flex items-end justify-between gap-3 mb-6 md:mb-8">
-          <h2 className="text-3xl md:text-5xl font-black text-gray-900">운영을 대하는 태도</h2>
+          <div>
+            <p className="text-xs md:text-sm font-bold tracking-[0.14em] uppercase text-[#5a5a5a]">
+              Work Principles
+            </p>
+            <h2 className="mt-1 text-3xl md:text-5xl font-black text-[#171717]">운영을 대하는 태도</h2>
+          </div>
           <button
             type="button"
             onClick={() => setShowAllPrinciples((prev) => !prev)}
-            className="px-4 py-2 border-2 border-gray-900 text-sm font-bold text-gray-900 hover:bg-gray-50 transition-colors"
+            className="rounded-lg border-2 border-[#171717] px-4 py-2 text-sm font-bold hover:bg-white transition-colors"
           >
             {showAllPrinciples ? "접기" : "+ 더보기"}
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           {visiblePrinciples.map((principle) => (
-            <article key={principle.title} className="border-2 border-gray-900 p-5 sm:p-6">
+            <article key={principle.title} className="rounded-2xl border-2 border-[#171717] bg-white p-5 sm:p-6">
               <div className="flex flex-wrap gap-2 mb-3">
                 {principle.keywords.map((keyword) => (
                   <span
                     key={keyword}
-                    className="px-2.5 py-1 bg-gray-900 text-white text-xs font-bold"
+                    className="rounded-md bg-[#171717] px-2.5 py-1 text-xs font-bold text-white"
                   >
                     {keyword}
                   </span>
                 ))}
               </div>
-              <h3 className="text-xl font-black text-gray-900 mb-2">{principle.title}</h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{principle.detail}</p>
+              <h3 className="text-xl font-black text-[#171717] mb-2">{principle.title}</h3>
+              <p className="text-sm sm:text-base text-[#444] leading-relaxed">{principle.detail}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16 mb-16 md:mb-20">
-        <div className="space-y-16 md:space-y-24">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16 pb-20">
+        <div className="space-y-8 md:space-y-10">
           {projects.map((project) => (
-            <article key={project.id} className="relative">
-              <div className="mb-8 md:mb-12">
-                <h2 className="text-3xl md:text-6xl font-black text-gray-900 leading-tight mb-3 md:mb-4">
-                  <span className="block">{project.title}</span>
-                  <span className="mt-3 inline-flex items-center gap-3 flex-wrap">
-                    <span className="px-3 sm:px-4 py-1 bg-purple-600 text-white text-sm sm:text-base font-bold">
-                      {project.highlight}
-                    </span>
-                    <span className="text-base sm:text-lg md:text-xl text-gray-600 font-medium">
-                      {project.timeline}
-                    </span>
-                  </span>
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3">문제</h3>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{project.problem}</p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3">접근</h3>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{project.approach}</p>
-                  </div>
+            <article key={project.id} className="rounded-2xl border-2 border-[#171717] bg-white p-5 md:p-8">
+              <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6 md:gap-8">
+                <div>
+                  <p className="text-xs font-bold tracking-[0.14em] uppercase text-[#5a5a5a]">Project 0{project.id}</p>
+                  <p className="mt-3 inline-block rounded-md bg-[#171717] px-3 py-1 text-xs font-bold text-white">
+                    {project.highlight}
+                  </p>
+                  <p className="mt-3 text-sm text-[#555] font-medium">{project.timeline}</p>
                 </div>
 
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3">결과</h3>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{project.result}</p>
+                <div>
+                  <h3 className="text-2xl md:text-4xl font-black leading-tight text-[#171717]">{project.title}</h3>
+
+                  <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    <div>
+                      <p className="text-xs font-bold tracking-[0.12em] uppercase text-[#616161]">문제</p>
+                      <p className="mt-2 text-sm sm:text-base text-[#444] leading-relaxed">{project.problem}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold tracking-[0.12em] uppercase text-[#616161]">접근</p>
+                      <p className="mt-2 text-sm sm:text-base text-[#444] leading-relaxed">{project.approach}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold tracking-[0.12em] uppercase text-[#616161]">결과</p>
+                      <p className="mt-2 text-sm sm:text-base text-[#444] leading-relaxed">{project.result}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold tracking-[0.12em] uppercase text-[#616161]">역할</p>
+                      <p className="mt-2 text-sm sm:text-base text-[#444] leading-relaxed">{project.role}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3">역할</h3>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{project.role}</p>
+
+                  <div className="mt-6 rounded-xl border-2 border-[#171717] bg-[#f7f5ea] p-4">
+                    <p className="text-sm font-black text-[#171717]">내가 여기서 한 일</p>
+                    <p className="mt-1 text-sm sm:text-base text-[#444] leading-relaxed">
+                      데이터로 병목을 정의하고, 운영 기준/프로세스를 설계한 뒤, 자동화와 루틴으로 확장했습니다.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 sm:gap-3 mt-5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-md border-2 border-[#171717] px-3 py-1.5 text-xs sm:text-sm font-bold text-[#171717]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </div>
-
-              <div className="border-2 border-gray-900 mt-6 sm:mt-8 p-4 sm:p-5 bg-gray-50">
-                <p className="text-sm font-black text-gray-900 mb-1">내가 여기서 한 일</p>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  데이터로 병목을 정의하고, 운영 기준/프로세스를 설계한 뒤, 자동화와 루틴으로 확장했습니다.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2 sm:gap-3 mt-4 sm:mt-6">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 sm:px-4 py-2 border-2 border-gray-900 text-xs sm:text-sm font-bold text-gray-900"
-                  >
-                    {tag}
-                  </span>
-                ))}
               </div>
             </article>
           ))}
         </div>
       </section>
-    </div>
+    </main>
   );
 }
