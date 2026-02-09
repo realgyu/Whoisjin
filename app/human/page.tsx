@@ -61,16 +61,8 @@ export default function HumanPage() {
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-20">
         <div className="relative">
-          {/* Small intro card (모바일에서는 상단에 자연스럽게) */}
-          <div className="md:absolute md:-top-4 md:right-0 w-full md:w-80 bg-white border-2 border-gray-900 p-5 sm:p-6 mb-6 md:mb-0 z-10">
-            <p className="text-sm text-gray-700 leading-relaxed">
-              <span className="font-bold text-gray-900">프로덕트 매니저</span> ·
-              데이터 기반 실행형 PM · 운영을 지표와 자동화로 스케일합니다
-            </p>
-          </div>
-
           {/* Main Typography */}
-          <div className="pt-2 md:pt-16">
+          <div className="pt-2 md:pt-6">
             <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-tight mb-2">
               황진규의
             </h1>
