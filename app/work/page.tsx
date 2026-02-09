@@ -1,26 +1,93 @@
-// FILE: app/work/page.tsx
+"use client";
+
+import { useState } from "react";
 
 export default function WorkPage() {
+  const [showAllPrinciples, setShowAllPrinciples] = useState(false);
+
+  const heroBullets = [
+    "병목을 정의하고",
+    "기준을 만들고",
+    "자동화로 확장합니다",
+  ];
+
   const impacts = [
     {
       label: "에어컨 청소 주문",
       value: "1.5만건",
       desc: "성수기 운영",
+      context: "성수기 피크데이 대응 포함",
     },
     {
       label: "GMV",
       value: "약 20억",
       desc: "에어컨 청소 기준",
+      context: "수요 급증 구간 운영 포함",
     },
     {
       label: "CS 대응",
       value: "최대 480건/일",
       desc: "피크 데이 기준",
+      context: "취소·일정·환불 이슈 동시 대응",
     },
     {
       label: "CRM 발송",
       value: "655만+",
       desc: "캠페인 운영",
+      context: "세그먼트 실험 및 운영 포함",
+    },
+  ];
+
+  const workPrinciples = [
+    {
+      title: "문제를 숫자로 시작합니다",
+      detail: "감으로 정하지 않고 데이터로 병목을 먼저 보이게 만듭니다.",
+      keywords: ["데이터", "병목"],
+    },
+    {
+      title: "복잡한 운영을 구조화합니다",
+      detail: "흐름을 쪼개고 우선순위를 세워 운영 난이도를 낮춥니다.",
+      keywords: ["구조", "우선순위"],
+    },
+    {
+      title: "기준 없는 일은 오래 못 갑니다",
+      detail: "의사결정 기준과 운영 룰을 문서화해 재현 가능하게 만듭니다.",
+      keywords: ["기준", "문서화"],
+    },
+    {
+      title: "재발 이슈는 표준화로 막습니다",
+      detail: "원인-대응-재발방지 흐름으로 표준 운영안을 만듭니다.",
+      keywords: ["표준화", "운영"],
+    },
+    {
+      title: "반복 업무는 자동화합니다",
+      detail: "사람 시간을 줄이고 판단이 필요한 일에 집중합니다.",
+      keywords: ["자동화", "효율"],
+    },
+    {
+      title: "작게 실험하고 빠르게 수정합니다",
+      detail: "작은 단위로 실행하고 결과를 보고 바로 다음 액션으로 연결합니다.",
+      keywords: ["실험", "실행"],
+    },
+    {
+      title: "현장 언어로 커뮤니케이션합니다",
+      detail: "파트너·운영·CS와 같은 그림을 보도록 표현을 맞춥니다.",
+      keywords: ["협업", "정렬"],
+    },
+    {
+      title: "운영을 시스템으로 만듭니다",
+      detail: "개인 역량에 의존하지 않도록 구조와 루틴을 설계합니다.",
+      keywords: ["시스템", "스케일"],
+    },
+    {
+      title: "지표는 행동으로 끝나야 합니다",
+      detail: "리포트로 끝내지 않고 운영 액션과 책임자까지 연결합니다.",
+      keywords: ["지표", "액션"],
+    },
+    {
+      title: "기획-실행-개선을 한 흐름으로 봅니다",
+      detail: "문제 정의부터 개선 루프까지 끊기지 않게 가져갑니다.",
+      keywords: ["개선", "루프"],
     },
   ];
 
@@ -31,114 +98,107 @@ export default function WorkPage() {
       timeline: "2025 (성수기)",
       highlight: "성수기 운영",
       problem:
-        "성수기에는 주문이 급증하면서 해피콜 지연, 일정 미업데이트, 추가금/견적 불만, 취소·정산 이슈가 한 번에 발생하기 쉬움. 고객 경험 저하가 곧 CS 폭증/취소로 이어지는 구조.",
+        "주문이 몰리면 연락 지연, 일정 누락, 추가금 불만, 취소 이슈가 동시에 터졌습니다.",
       approach:
-        "문의/취소 사유를 유형화해(연락·일정·추가금·환불·A/S·정산) 우선순위를 세우고, 파트너 운영 가이드/관리지표를 표준화. 운영 현황을 대시보드로 모니터링하며 리마인드·에스컬레이션 기준을 명확히 해 병목을 줄임.",
+        "문의·취소 사유를 유형화하고 우선순위를 정했습니다. 파트너 운영 기준과 에스컬레이션 룰을 표준화했습니다.",
       result:
-        "주문 1.5만건 규모를 운영하며 GMV 약 20억 달성. 피크 데이에는 최대 480건/일 수준의 CS를 대응하며 운영 안정성을 확보(고객/파트너 커뮤니케이션, 일정·정산 이슈 핸들링 포함).",
-      role: "PM (운영 설계 · 데이터 기반 개선 · 파트너 협업 · 실행)",
+        "주문 1.5만건, GMV 약 20억을 운영했습니다. 피크데이 최대 480건/일 CS를 안정적으로 처리했습니다.",
+      role: "PM (운영 설계 · 지표 기반 개선 · 파트너 협업)",
       tags: ["O2O 운영", "프로세스 표준화", "CS", "파트너 매니지먼트"],
-      color: "blue",
     },
     {
       id: 2,
-      title: "채널톡 상담: 셀프해결형 정보 구조(CTA/Depth) 설계",
+      title: "채널톡 상담 정보 구조(CTA/Depth) 재설계",
       timeline: "2026.01–",
       highlight: "정보 구조",
       problem:
-        "상담원 연결 중심 구조는 성수기 문의 폭증 시 대기/불만을 키움. 단순 문의는 1~2 depth에서 자가 해결되어야 CS 병목이 줄어듦.",
+        "상담원 연결 중심 구조라 단순 문의도 대기로 쌓이며 운영 병목이 커졌습니다.",
       approach:
-        "작년 주요 문의와 운영 이슈를 기준으로 '자가 해결 가능한 질문'을 깊이별로 재구성하고, 상담원 연결 CTA는 정말 필요한 지점에만 배치. 고객이 막히는 지점을 기준으로 카테고리를 재매핑해 탐색 비용을 줄임.",
+        "자가 해결 질문을 깊이별로 재배치하고 상담원 연결 CTA를 필요한 지점에만 남겼습니다.",
       result:
-        "구조 개편 이후 상담원 연결(또는 직접 대응 필요 건)이 일 평균 49.8건, 최대 87건까지 감소하여 운영 병목을 완화.",
-      role: "PM (정보 구조 설계 · 운영 데이터 기반 개선)",
+        "개편 후 상담원 연결/직접 대응 건이 일 평균 49.8건, 최대 87건 수준으로 감소했습니다.",
+      role: "PM (정보 구조 설계 · 운영 데이터 개선)",
       tags: ["CS UX", "FAQ/CTA", "정보 구조", "운영 개선"],
-      color: "purple",
     },
     {
       id: 3,
-      title: "파트너 배정 로직: 비율 변경 시점부터 자동 반영(운영 자동화)",
+      title: "파트너 배정 로직 자동 반영",
       timeline: "2025–2026",
       highlight: "자동화",
       problem:
-        "파트너별 물량 배분 비율이 바뀔 때 수동 반영/혼선이 생기면 배정 오류로 이어지고, 운영 신뢰도와 처리 속도가 떨어짐.",
+        "배분 비율 변경을 수동으로 반영하면 누락과 혼선이 반복됐습니다.",
       approach:
-        "'비율 변경 시점 이후부터 신규 비율 적용' 원칙으로 로직을 정리하고, 예외 케이스(취소/중복/누락) 검증 포인트와 로그/알림 기준을 함께 설계.",
+        "변경 시점 이후 신규 비율이 자동 적용되도록 로직을 설계하고 예외 검증 포인트를 정의했습니다.",
       result:
-        "수작업으로 하루 2시간+ 투입하던 배정/반영 작업을 자동화하여 운영 리소스를 절감하고, 변경 적용 속도와 일관성을 확보.",
-      role: "PM (요구사항 정의 · 로직 설계 · 구현/검증)",
+        "하루 2시간+ 들던 반복 작업을 자동화해 반영 속도와 일관성을 함께 올렸습니다.",
+      role: "PM (요구사항 정의 · 로직 설계 · 검증)",
       tags: ["Google Apps Script", "자동화", "배정 로직", "운영 효율"],
-      color: "orange",
     },
     {
       id: 4,
-      title: "지역별 수요 분석('시' 단위 정규화) & 타겟 전략 근거 확보",
+      title: "지역별 수요 분석(시 단위 정규화)",
       timeline: "2026.01 (In progress)",
       highlight: "데이터 분석",
       problem:
-        "주소 포맷이 지역/유형별로 달라 시 단위 분석에서 null/미상이 발생. 수도권 이후 '다음 타겟' 의사결정 근거가 약해짐.",
+        "주소 포맷 불일치로 시 단위 분석에서 null/미상이 발생해 타겟 판단이 느렸습니다.",
       approach:
-        "도로명 주소에서 시/시군구를 안정적으로 추출하도록 정규식/전처리를 개선하고, '미상' 케이스는 별도 분리해 패턴을 확인. Looker Studio 시각화에 맞게 지역 단위를 표준화.",
+        "주소 전처리와 정규식 기준을 고도화해 지역 단위를 표준화하고 미상 케이스를 분리했습니다.",
       result:
-        "현재 분석 진행 중이며, 전체 지역 분포를 기반으로 '수도권 이후 타겟' 후보를 도출해 마케팅/운영 의사결정에 연결하는 것을 목표로 함.",
-      role: "PM/Analyst (데이터 가공 · 분석 · 시각화 · 공유)",
+        "수도권 이후 타겟 후보를 데이터로 도출할 수 있는 분석 기반을 구축 중입니다.",
+      role: "PM/Analyst (데이터 가공 · 분석 · 시각화)",
       tags: ["Looker Studio", "Regex", "지역 분석", "타겟팅"],
-      color: "green",
     },
   ];
 
+  const visiblePrinciples = showAllPrinciples
+    ? workPrinciples
+    : workPrinciples.slice(0, 6);
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-20">
-        <div className="relative">
-          {/* Main Typography */}
-          <div className="pt-6 md:pt-10">
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[1.05] tracking-tight">
-              데이터를 기반으로
-            </h1>
+        <h1 className="text-4xl md:text-7xl font-black text-gray-900 leading-[1.05] tracking-tight">
+          데이터를 기반으로
+        </h1>
+        <h1 className="mt-2 text-4xl md:text-7xl font-black text-gray-900 leading-[1.05] tracking-tight">
+          복잡한 운영을 효율화 합니다.
+        </h1>
 
-            <h1 className="mt-2 text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[1.05] tracking-tight">
-              복잡한 운영을{" "}
-              <span className="relative inline-block align-baseline">
-                <span className="relative z-10 text-white px-3 sm:px-4 md:px-6 py-1 md:py-2">
-                  효율화
-                </span>
-                <span className="absolute inset-0 bg-purple-600 -skew-x-6" />
-              </span>
-              합니다
-              <span className="inline-block w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 bg-cyan-400 rounded-full ml-2 sm:ml-3 md:ml-4 mb-1 md:mb-2" />
-            </h1>
+        <p className="mt-6 text-base md:text-xl text-gray-600 font-medium max-w-3xl leading-relaxed">
+          O2O 생활서비스 성수기 운영을 지표·프로세스·자동화로 안정화합니다.
+        </p>
 
-            <p className="mt-6 text-base sm:text-lg md:text-xl text-gray-600 font-medium max-w-2xl leading-relaxed">
-              O2O 생활서비스(에어컨 청소 등) 성수기 운영의 병목을 데이터로 정의하고,
-              프로세스·파트너 운영·자동화로 안정성과 확장성을 만듭니다.
-            </p>
+        <ul className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {heroBullets.map((bullet) => (
+            <li
+              key={bullet}
+              className="border-2 border-gray-900 px-4 py-3 text-sm md:text-base font-bold text-gray-900"
+            >
+              {bullet}
+            </li>
+          ))}
+        </ul>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
-              <a
-                href="mailto:contact@example.com"
-                className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gray-900 text-white text-base sm:text-lg font-bold rounded-none hover:bg-gray-800 transition-colors text-center"
-              >
-                연락하기
-              </a>
-              <a
-                href="/human"
-                className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-gray-900 text-gray-900 text-base sm:text-lg font-bold rounded-none hover:bg-gray-50 transition-colors text-center"
-              >
-                Human 보기 →
-              </a>
-            </div>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
+          <a
+            href="mailto:contact@example.com"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gray-900 text-white text-base sm:text-lg font-bold hover:bg-gray-800 transition-colors text-center"
+          >
+            연락하기
+          </a>
+          <a
+            href="/human"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-gray-900 text-gray-900 text-base sm:text-lg font-bold hover:bg-gray-50 transition-colors text-center"
+          >
+            Human 보기 →
+          </a>
         </div>
       </section>
 
-      {/* Impact Stats */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          {impacts.map((impact, idx) => (
-            <div key={idx} className="border-2 border-gray-900 p-4 sm:p-6">
+          {impacts.map((impact) => (
+            <div key={impact.label} className="border-2 border-gray-900 p-4 sm:p-6">
               <div className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-2">
                 {impact.value}
               </div>
@@ -146,26 +206,54 @@ export default function WorkPage() {
                 {impact.label}
               </div>
               <div className="text-[11px] sm:text-xs text-gray-600">{impact.desc}</div>
+              <div className="mt-2 text-[11px] sm:text-xs text-gray-500">{impact.context}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Projects */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16">
+        <div className="flex items-end justify-between gap-3 mb-6 md:mb-8">
+          <h2 className="text-3xl md:text-5xl font-black text-gray-900">운영을 대하는 태도</h2>
+          <button
+            type="button"
+            onClick={() => setShowAllPrinciples((prev) => !prev)}
+            className="px-4 py-2 border-2 border-gray-900 text-sm font-bold text-gray-900 hover:bg-gray-50 transition-colors"
+          >
+            {showAllPrinciples ? "접기" : "+ 더보기"}
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          {visiblePrinciples.map((principle) => (
+            <article key={principle.title} className="border-2 border-gray-900 p-5 sm:p-6">
+              <div className="flex flex-wrap gap-2 mb-3">
+                {principle.keywords.map((keyword) => (
+                  <span
+                    key={keyword}
+                    className="px-2.5 py-1 bg-gray-900 text-white text-xs font-bold"
+                  >
+                    {keyword}
+                  </span>
+                ))}
+              </div>
+              <h3 className="text-xl font-black text-gray-900 mb-2">{principle.title}</h3>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{principle.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16 mb-16 md:mb-20">
         <div className="space-y-16 md:space-y-24">
           {projects.map((project) => (
             <article key={project.id} className="relative">
-              {/* Project Title */}
               <div className="mb-8 md:mb-12">
-                <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-3 md:mb-4">
+                <h2 className="text-3xl md:text-6xl font-black text-gray-900 leading-tight mb-3 md:mb-4">
                   <span className="block">{project.title}</span>
-                  <span className="mt-3 inline-flex items-center gap-3">
-                    <span className="relative inline-block">
-                      <span className="relative z-10 text-white px-3 sm:px-4 py-1">
-                        {project.highlight}
-                      </span>
-                      <span className="absolute inset-0 bg-purple-600 -skew-x-6" />
+                  <span className="mt-3 inline-flex items-center gap-3 flex-wrap">
+                    <span className="px-3 sm:px-4 py-1 bg-purple-600 text-white text-sm sm:text-base font-bold">
+                      {project.highlight}
                     </span>
                     <span className="text-base sm:text-lg md:text-xl text-gray-600 font-medium">
                       {project.timeline}
@@ -174,57 +262,38 @@ export default function WorkPage() {
                 </h2>
               </div>
 
-              {/* Content Grid */}
-              <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-                {/* Left - Problem & Approach */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 <div className="space-y-8">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3 flex items-center gap-2">
-                      <span className="w-3 h-3 bg-red-500 rounded-full" />
-                      문제
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                      {project.problem}
-                    </p>
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3">문제</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{project.problem}</p>
                   </div>
-
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3 flex items-center gap-2">
-                      <span className="w-3 h-3 bg-blue-500 rounded-full" />
-                      접근
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                      {project.approach}
-                    </p>
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3">접근</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{project.approach}</p>
                   </div>
                 </div>
 
-                {/* Right - Result & Role */}
                 <div className="space-y-8">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3 flex items-center gap-2">
-                      <span className="w-3 h-3 bg-green-500 rounded-full" />
-                      결과
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                      {project.result}
-                    </p>
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3">결과</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{project.result}</p>
                   </div>
-
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3 flex items-center gap-2">
-                      <span className="w-3 h-3 bg-purple-500 rounded-full" />
-                      역할
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                      {project.role}
-                    </p>
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3">역할</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{project.role}</p>
                   </div>
                 </div>
               </div>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 sm:gap-3 mt-6 sm:mt-8">
+              <div className="border-2 border-gray-900 mt-6 sm:mt-8 p-4 sm:p-5 bg-gray-50">
+                <p className="text-sm font-black text-gray-900 mb-1">내가 여기서 한 일</p>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  데이터로 병목을 정의하고, 운영 기준/프로세스를 설계한 뒤, 자동화와 루틴으로 확장했습니다.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2 sm:gap-3 mt-4 sm:mt-6">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
@@ -236,34 +305,6 @@ export default function WorkPage() {
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      {/* How I Work */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-10 md:py-16 mb-16 md:mb-20">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-6 md:mb-8">
-          나는 이렇게{" "}
-          <span className="relative inline-block mx-2 sm:mx-3">
-            <span className="relative z-10 text-white px-3 sm:px-4 py-1">일합니다</span>
-            <span className="absolute inset-0 bg-purple-600 -skew-x-6" />
-          </span>
-        </h2>
-
-        <div className="border-2 border-gray-900 p-5 sm:p-8">
-          <ul className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-            <li className="flex items-start gap-3 sm:gap-4">
-              <span className="w-3 h-3 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-              <span>복잡한 문제를 “지표로 보이게” 만든 뒤, 빠르게 실행 가능한 단위로 쪼갭니다.</span>
-            </li>
-            <li className="flex items-start gap-3 sm:gap-4">
-              <span className="w-3 h-3 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-              <span>운영/CS/파트너 이슈는 “원인-재발방지-표준화”로 정리해, 다음 성수기에 덜 아프게 만듭니다.</span>
-            </li>
-            <li className="flex items-start gap-3 sm:gap-4">
-              <span className="w-3 h-3 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-              <span>반복 업무는 자동화해서 시간을 벌고, 그 시간을 더 좋은 판단과 실험에 씁니다.</span>
-            </li>
-          </ul>
         </div>
       </section>
     </div>
